@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        h1 {
+            color: #343a40;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-wrapper {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-control {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: #343a40;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #555b61;
+        }
+    </style>
+
+    <title>Add Lesson</title>
+
+    <script>
+        function handleFormSubmission(event) {
+            const form = event.target;
+            event.preventDefault();
+            alert("Lesson added successfully!");
+            form.submit();
+        }
+    </script>
+</head>
+<body>
+    <h1>Add a New Lesson</h1>
+
+    <div class="form-wrapper">
+        <form action="/lesson" method="post" onsubmit="handleFormSubmission(event)">
+            <div class="form-group">
+                <label for="courseId">Course ID</label>
+                <input type="text" class="form-control" name="courseId">
+            </div>
+
+            <div class="form-group">
+                <label for="lessonId">Lesson ID</label>
+                <input type="text" class="form-control" name="lessonId">
+            </div>
+
+            <div class="form-group">
+                <label for="lessonName">Lesson Name</label>
+                <input type="text" class="form-control" name="lessonName">
+            </div>
+
+            <div class="form-group">
+                <label for="lessonTopics">Lesson Topics</label>
+                <input type="text" class="form-control" name="topics">
+            </div>
+
+            <div class="form-group">
+                <label for="link">Lesson Video Link</label>
+                <input type="text" class="form-control" name="link">
+            </div>
+
+            <button type="submit" class="btn-primary">Add Lesson</button>
+        </form>
+    </div>
+</body>
+</html>
